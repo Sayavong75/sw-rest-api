@@ -32,7 +32,7 @@ public class PlanetControllerTests {
     @Test
     public void getPlanetList() throws Exception {
         when(this.planetRepository.findAll()).thenReturn(new ArrayList<>()); // Le when c'est ce que l'on veut mocker
-        this.mockMvc.perform(get("/api/planets/planetsAll")).andExpect(status().isOk()); // On teste le controller et on attend Ok
+        this.mockMvc.perform(get("/api/planetes/planetsAll")).andExpect(status().isOk()); // On teste le controller et on attend Ok
     }
 
     @Test
