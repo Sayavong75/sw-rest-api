@@ -37,7 +37,7 @@ class ApiStarwarsApplicationTests {
         @Test
         public void getPlanetList() {
             // When getting on /api/planets
-            ResponseEntity<List> responseEntity = this.restTemplate.exchange("/api/starwarsJPA/planetsAll", HttpMethod.GET, null,List.class);
+            ResponseEntity<List> responseEntity = this.restTemplate.exchange("/api/planets/planetsAll", HttpMethod.GET, null,List.class);
             List<?> planets = responseEntity.getBody();
             // Then we should have a list and a 200 response code
             assertThat(planets).isNotNull();
