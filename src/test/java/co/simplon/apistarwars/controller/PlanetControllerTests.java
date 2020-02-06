@@ -45,7 +45,7 @@ public class PlanetControllerTests {
     public void addPlanet() throws Exception {
         when(this.planetRepository.save(any())).thenReturn(new Planet());
         this.mockMvc
-                .perform(post("/api/planetes/addPlanet").contentType(MediaType.APPLICATION_JSON) // Format du contenu
+                .perform(post("/api/planets/addPlanet").contentType(MediaType.APPLICATION_JSON) // Format du contenu
                         .content("{\"planetName\": \"TotoPlanet\"}"))
                 .andExpect(status().isOk()).andExpect(jsonPath("planetName").value("TotoPlanet"));
     }
