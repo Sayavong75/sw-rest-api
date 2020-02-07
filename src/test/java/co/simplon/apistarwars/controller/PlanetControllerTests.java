@@ -51,7 +51,8 @@ public class PlanetControllerTests {
     }
     @Test
     public void getExistingPlanetById() throws Exception {
-        
+        when(this.planetRepository.findById(3L)).thenReturn(Optional.of(new Planet()));
+        this.mockMvc.perform(get("/api/planets/planetsById/3")).andExpect(status().isOk());
     }
 
 
